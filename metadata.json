@@ -1,0 +1,6 @@
+{
+  "name": "Jio Hotstar Premium",
+  "description": "OTT video streaming platform foundation with encrypted configs, admin authentication, and Firebase Realtime Database.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

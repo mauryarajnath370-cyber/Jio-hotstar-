@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "147522734754",
+    "project_id": "jio-hotstar-premium",
+    "storage_bucket": "jio-hotstar-premium.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:147522734754:android:447b5f94dfd73e66a0e5fb",
+        "android_client_info": {
+          "package_name": "com.jiohotstar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "147522734754-i5cvfttveun2esohquaoqeqnobchj2ub.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7YumwKVQi9UiAoRd8ypBZys6JFHD20Eo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "147522734754-i5cvfttveun2esohquaoqeqnobchj2ub.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

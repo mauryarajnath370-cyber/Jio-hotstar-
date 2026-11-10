@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Jio Hotstar Premium</string>
+    <string name="splash_tagline">OTT Video Streaming</string>
+    <string name="language_screen_title">Select Language</string>
+    <string name="login_screen_title">Sign In</string>
+    <string name="home_screen_title">Home</string>
+</resources>

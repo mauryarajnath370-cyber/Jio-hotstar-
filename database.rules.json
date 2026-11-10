@@ -1,0 +1,54 @@
+{
+  "rules": {
+    "app_config": {
+      ".read": true,
+      ".write": "auth != null && (auth.token.admin == true || root.child('admins').child(auth.uid).exists())"
+    },
+    "categories": {
+      ".read": "auth != null",
+      ".write": "auth != null && (auth.token.admin == true || root.child('admins').child(auth.uid).exists())",
+      ".indexOn": ["order", "type"]
+    },
+    "videos": {
+      ".read": "auth != null",
+      ".write": "auth != null && (auth.token.admin == true || root.child('admins').child(auth.uid).exists())",
+      ".indexOn": ["category", "isAdult", "isTrending", "createdAt"]
+    },
+    "live_events": {
+      ".read": "auth != null",
+      ".write": "auth != null && (auth.token.admin == true || root.child('admins').child(auth.uid).exists())",
+      ".indexOn": ["isActive", "scheduledAt"]
+    },
+    "orders": {
+      ".read": "auth != null && (auth.token.admin == true || root.child('admins').child(auth.uid).exists())",
+      "$orderId": {
+        ".read": "auth != null && (data.child('uid').val() == auth.uid || auth.token.admin == true || root.child('admins').child(auth.uid).exists())",
+        ".write": "auth != null"
+      },
+      ".indexOn": ["uid", "status", "createdAt"]
+    },
+    "users": {
+      "$uid": {
+        ".read": "auth != null && (auth.uid == $uid || auth.token.admin == true || root.child('admins').child(auth.uid).exists())",
+        ".write": "auth != null && (auth.uid == $uid || auth.token.admin == true || root.child('admins').child(auth.uid).exists())"
+      }
+    },
+    "premium_requests": {
+      ".read": "auth != null && (auth.token.admin == true || root.child('admins').child(auth.uid).exists())",
+      "$requestId": {
+        ".read": "auth != null && (data.child('userId').val() == auth.uid || auth.token.admin == true || root.child('admins').child(auth.uid).exists())",
+        ".write": "auth != null && (newData.child('userId').val() == auth.uid || auth.token.admin == true || root.child('admins').child(auth.uid).exists())"
+      }
+    },
+    "reports": {
+      ".read": "auth != null && (auth.token.admin == true || root.child('admins').child(auth.uid).exists())",
+      "$reportId": {
+        ".write": "auth != null && newData.child('userId').val() == auth.uid"
+      }
+    },
+    "admins": {
+      ".read": "auth != null && (auth.token.admin == true || root.child('admins').child(auth.uid).exists())",
+      ".write": false
+    }
+  }
+}
